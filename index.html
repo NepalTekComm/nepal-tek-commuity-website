@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for NTC */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .primary-bg {
+            background-color: #0097B2;
+        }
+        .secondary-bg {
+            background-color: #FF914D;
+        }
+        .text-ntc {
+            color: #0097B2;
+        }
+    </style>
+    <title>Nepal TeK Community (NTC)</title>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <header class="primary-bg p-4">
+        <nav class="container mx-auto flex justify-between items-center">
+            <h1 class="text-white text-2xl font-semibold">NTC</h1>
+            <input type="checkbox" id="menu-toggle" class="hidden">
+            <label for="menu-toggle" class="text-white cursor-pointer md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </label>
+            <ul class="hidden md:flex md:space-x-4 text-white">
+                <li><a href="#">Home</a></li>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#team">Executive Team</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Introduction Section -->
+    <section id="introduction" class="primary-bg text-white p-8">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-semibold">Welcome to Nepal TeK Community (NTC)</h2>
+            <p class="mt-4">A thriving community of students passionate about technology and innovation.</p>
+        </div>
+    </section>
+
+    <!-- Event Section -->
+    <section id="events" class="bg-white p-8">
+        <div class="container mx-auto">
+            <h2 class="text-3xl text-ntc font-semibold">Upcoming Events</h2>
+            <!-- Event cards go here -->
+            <div class="flex justify-center mt-4">
+                <a href="html/event.html" class="primary-bg text-white px-4 py-2 rounded hover:bg-secondary-bg">See More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Executive Team Section -->
+    <section id="team" class="primary-bg text-white p-8">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-semibold">Meet Our Executive Team</h2>
+            <!-- Team member cards go here -->
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="bg-white p-8">
+        <div class="container mx-auto">
+            <h2 class="text-3xl text-ntc font-semibold">Gallery</h2>
+            <!-- Gallery images go here -->
+            <div class="flex justify-center mt-4">
+                <a href="html/gallery.html" class="primary-bg text-white px-4 py-2 rounded hover:bg-secondary-bg">See More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="primary-bg text-white p-8">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-semibold">Contact Us</h2>
+            <!-- Contact form or information goes here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="primary-bg text-white p-8">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <h3 class="text-lg font-semibold">About NTC</h3>
+                    <p>We are Nepal TeK Community (NTC), a student-driven tech community.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Contact Info</h3>
+                    <p>Email: ntc@ncit.edu.np</p>
+                    <p>Phone: +977-9800000000</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Follow Us</h3>
+                    <!-- Social media links/icons go here -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript (if needed) -->
+
+</body>
+</html>

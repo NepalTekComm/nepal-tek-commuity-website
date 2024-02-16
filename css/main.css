@@ -1,0 +1,15 @@
+.executive-image {
+    width: 200px; 
+    height: 200px; 
+    border-radius: 50%; 
+    overflow: hidden;
+    border: 5px solid #fff;
+}
+
+.executive-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

@@ -1,0 +1,28 @@
+{
+    "events": [
+        {
+            "event_banner": "path/to/banner1.jpg",
+            "event_title": "Event 1",
+            "event_start_date": "2024-02-20",
+            "event_end_date": "2024-02-22",
+            "event_location": "Location 1",
+            "event_description": "Description of Event 1"
+        },
+        {
+            "event_banner": "path/to/banner2.jpg",
+            "event_title": "Event 2",
+            "event_start_date": "2024-03-15",
+            "event_end_date": "2024-03-17",
+            "event_location": "Location 2",
+            "event_description": "Description of Event 2"
+        },
+        {
+            "event_banner": "path/to/banner3.jpg",
+            "event_title": "Event 3",
+            "event_start_date": "2024-04-10",
+            "event_end_date": "2024-04-12",
+            "event_location": "Location 3",
+            "event_description": "Description of Event 3"
+        }
+    ]
+}

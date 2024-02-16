@@ -1,0 +1,65 @@
+{
+    "team_members": [
+      {
+        "name": "Bibek Dhakal",
+        "image": "resources/img/executives/Bibek_Dhakal.png",
+        "role": "Advisor",
+        "social_media": {
+          "github": "https://github.com/bibekdhkl",
+          "twitter": "https://twitter.com/bibekdhkl",
+          "linkedin": "https://www.linkedin.com/in/bibekdhkl"
+        }
+      },
+      {
+        "name": "Satya Raj Awasthi",
+        "image": "resources/img/executives/Satya_Raj_Awasthi.png",
+        "role": "Co-ordinating Lead",
+        "social_media": {
+          "github": "https://github.com/SatyaRajAwasth1",
+          "twitter": "https://twitter.com/SatyaRajAwasth1",
+          "linkedin": "https://www.linkedin.com/in/SatyaRajAwasth1"
+        }
+      },
+      {
+        "name": "Birat Aryal",
+        "image": "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).jpg",
+        "role": "Public Relation Lead",
+        "social_media": {
+          "github": "#",
+          "twitter": "#",
+          "linkedin": "#"
+        }
+      },
+      {
+        "name": "Shreeya Tamang",
+        "image": "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(31).jpg",
+        "role": "Technical Lead",
+        "social_media": {
+          "github": "#",
+          "twitter": "#",
+          "linkedin": "#"
+        }
+      },
+      {
+        "name": "Kabita Poudel",
+        "image": "resources/img/executives/Kabita_Poudel.jpg",
+        "role": "Treasurer",
+        "social_media": {
+          "github": "#",
+          "twitter": "#",
+          "linkedin": "#"
+        }
+      },
+      {
+        "name": "Pabin Bhandari",
+        "image": "resources/img/executives/Pabin_Bhandari.jpg",
+        "role": "Executive",
+        "social_media": {
+          "github": "#",
+          "twitter": "#",
+          "linkedin": "#"
+        }
+      }
+    ]
+  }
+  

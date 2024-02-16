@@ -1,86 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <style>
-        /* Custom CSS for NTC */
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .primary-bg {
-            background-color: #0097B2;
-        }
-        .secondary-bg {
-            background-color: #FF914D;  
-        }
-        .text-ntc {
-            color: #0097B2;
-        }
-    </style>
     <title>Nepal TeK Community (NTC)</title>
 </head>
+
 <body class="bg-gray-100">
+
     <!-- Navigation Bar -->
-    <header class="primary-bg p-4">
-        <nav class="container mx-auto flex justify-between items-center">
-            <h1 class="text-white text-2xl font-semibold">NTC</h1>
+    <header class="primary-bg p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center h-16">
+            <!-- Logo -->
+            <h1 class="text-white text-3xl font-semibold">NTC</h1>
+            <!-- Mobile Menu Toggle -->
             <input type="checkbox" id="menu-toggle" class="hidden">
             <label for="menu-toggle" class="text-white cursor-pointer md:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
                 </svg>
             </label>
+            <!-- Desktop Menu -->
             <ul class="hidden md:flex md:space-x-4 text-white">
-                <li><a href="#">Home</a></li>
-                <li><a href="#introduction">Introduction</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#team">Executive Team</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#introduction"
+                        class="nav-link hover:text-gray-300 transition duration-300 ease-in-out">Introduction</a>
+                </li>
+                <li><a href="#events"
+                        class="nav-link hover:text-gray-300 transition duration-300 ease-in-out">Events</a>
+                </li>
+                <li><a href="#team" class="nav-link hover:text-gray-300 transition duration-300 ease-in-out">Executive
+                        Team</a></li>
+                <li><a href="#gallery"
+                        class="nav-link hover:text-gray-300 transition duration-300 ease-in-out">Gallery</a>
+                </li>
+                <li><a href="#contact" class="nav-link hover:text-gray-300 transition duration-300 ease-in-out">Contact
+                        Us</a></li>
             </ul>
-        </nav>
+        </div>
     </header>
 
     <!-- Introduction Section -->
-    <section id="introduction" class="primary-bg text-white p-8">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-semibold">Welcome to Nepal TeK Community (NTC)</h2>
-            <p class="mt-4">A thriving community of students passionate about technology and innovation.</p>
+    <section id="introduction" class="bg-gray-100 p-8">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center">
+            <div class="w-full lg:w-1/2 lg:pr-8">
+                <div class="mb-8 lg:mb-0">
+                    <h2 class="text-3xl font-semibold text-gray-800 mb-4">Welcome to Nepal TeK Community (NTC)</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed">A thriving community of students passionate about
+                        technology and innovation. Join us in exploring the latest trends and advancements in the tech
+                        world!</p>
+                </div>
+            </div>
+            <div class=" mb-8 w-full lg:w-1/2 lg:mb-0 flex justify-center ">
+                <div class=" intro-image-card border-2 border-gray-300 rounded-lg overflow-hidden shadow-lg">
+                    <img src="resources/img/event-banners/community_announcement.jpg" alt="NTC Image"
+                        class="w-full lg:w-90 h-auto transition duration-300 transform hover:scale-105">
+                </div>
+            </div>
         </div>
     </section>
 
-<!-- Event Section -->
-<section id="events" class="bg-white p-8">
-    <div class="container mx-auto">
-        <h2 class="text-3xl text-ntc font-semibold">Upcoming Events</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8" id="event-cards-container">
-            <!-- Event Cards will be dynamically inserted here -->
+    <!-- Showcase Section for Registration Open Events -->
+    <section id="showcase-section" class="p-8 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-3xl text-ntc font-semibold">Showcase Section</h2>
+            <p>Sample text for the showcase section...</p>
         </div>
-        <div class="flex justify-center mt-8">
-            <a href="html/event.html" class="primary-bg text-white px-4 py-2 rounded hover:bg-secondary-bg">See All events</a>
+    </section>
+
+    <!-- Event Section -->
+    <section id="events" class="bg-white p-8">
+        <div class="container mx-auto">
+            <h2 class="text-3xl text-ntc font-semibold">Our Events</h2>
+            <p>Sample text for the event section...</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8" id="event-cards-container">
+                <!-- Event Cards will be dynamically inserted here -->
+            </div>
+            <div class="flex justify-center mt-8">
+                <a href="html/event.html" class="primary-bg text-white px-4 py-2 rounded hover:bg-secondary-bg">See All
+                    events</a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-
-<!-- Executive Team Section -->
-<section id="team" class="bg-white p-8">
-    <div class="container mx-auto">
-        <h2 class="text-3xl text-ntc font-semibold">Executives</h2>
-        <div id="executives-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8"></div>
-    </div>
-</section>
+    <!-- Executive Team Section -->
+    <section id="team" class="bg-white p-8">
+        <div class="container mx-auto">
+            <h2 class="text-3xl text-ntc font-semibold">Executives</h2>
+            <p>Sample text for the executive team section...</p>
+            <div id="executives-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8"></div>
+        </div>
+    </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="bg-white p-8">
+    <section id="gallery" class="bg-gray-100 p-8">
         <div class="container mx-auto">
-            <h2 class="text-3xl text-ntc font-semibold">Gallery</h2>
-            <!-- Gallery images go here -->
-            <div class="flex justify-center mt-4">
-                <a href="html/gallery.html" class="primary-bg text-white px-4 py-2 rounded hover:bg-secondary-bg">See More</a>
+            <h2 class="text-3xl text-ntc font-semibold text-gray-800 mb-6">Gallery</h2>
+            <p>Sample text for the gallery section...</p>
+            <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
+                <div class="-m-1 flex flex-wrap md:-m-2">
+                    <div class="flex w-full md:w-1/2 lg:w-1/3 flex-wrap">
+                        <div class="w-full p-1 md:p-2">
+                            <img alt="gallery"
+                                class="block h-full w-full rounded-lg object-cover object-center shadow-md"
+                                src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp" />
+                        </div>
+                    </div>
+                    <div class="flex w-full md:w-1/2 lg:w-1/3 flex-wrap">
+                        <div class="w-full p-1 md:p-2">
+                            <img alt="gallery"
+                                class="block h-full w-full rounded-lg object-cover object-center shadow-md"
+                                src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(75).webp" />
+                        </div>
+                    </div>
+                    <div class="flex w-full md:w-1/2 lg:w-1/3 flex-wrap">
+                        <div class="w-full p-1 md:p-2">
+                            <img alt="gallery"
+                                class="block h-full w-full rounded-lg object-cover object-center shadow-md"
+                                src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp" />
+                        </div>
+                    </div>
+                    <div class="flex w-full md:w-1/2 lg:w-1/3 flex-wrap">
+                        <div class="w-full p-1 md:p-2">
+                            <img alt="gallery"
+                                class="block h-full w-full rounded-lg object-cover object-center shadow-md"
+                                src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(76).webp" />
+                        </div>
+                    </div>
+                    <div class="flex w-full md:w-1/2 lg:w-1/3 flex-wrap">
+                        <div class="w-full p-1 md:p-2">
+                            <img alt="gallery"
+                                class="block h-full w-full rounded-lg object-cover object-center shadow-md"
+                                src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp" />
+                        </div>
+                    </div>
+                    <div class="flex w-full md:w-1/2 lg:w-1/3 flex-wrap">
+                        <div class="w-full p-1 md:p-2">
+                            <img alt="gallery"
+                                class="block h-full w-full rounded-lg object-cover object-center shadow-md"
+                                src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(74).webp" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center mt-6">
+                <a href="html/gallery.html"
+                    class="primary-bg text-white px-6 py-3 rounded-md hover:bg-secondary-bg transition duration-300 ease-in-out">See
+                    More</a>
             </div>
         </div>
     </section>
@@ -99,22 +170,40 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
                     <h3 class="text-lg font-semibold">About NTC</h3>
-                    <p>We are Nepal TeK Community (NTC), a student-driven tech community and forum at NCIT connecting NCITians and beyond.</p>
+                    <p>We are Nepal TeK Community (NTC), a student-driven tech community and forum at NCIT connecting
+                        NCITians and beyond.</p>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold">Contact Info</h3>
-                    <p>Email: ntc@ncit.edu.np</p>
+                    <p>Email: tekcommunity@ncit.edu.np</p>
                     <p>Phone: +977-9800000000</p>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold">Follow Us</h3>
                     <!-- Social media links/icons go here -->
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/NepalTekComm" class="text-white hover:text-gray-300">
+                            <img src="resources/img/icons/facebook.svg" alt="" class="w-6 h-6">
+                        </a>
+                        <a href="https://www.twitter.com/NepalTekComm" class="text-white hover:text-gray-300">
+                            <img src="resources/img/icons/twitter.svg" alt="" class="w-6 h-6">
+                        </a>
+                        <a href="https://www.linkedin.com/company/NepalTekComm" class="text-white hover:text-gray-300">
+                            <img src="resources/img/icons/linkedin.svg" alt="" class="w-6 h-6">
+                        </a>
+                        <a href="https://www.instagram.com/NepalTekComm" class="text-white hover:text-gray-300">
+                            <img src="resources/img/icons/instagram.svg" alt="" class="w-6 h-6">
+                        </a>
+                    </div>
                 </div>
             </div>
+            <div class="mt-8 text-center text-white-300 text-sm">&copy; <span id="current-year"></span> Nepal TeK
+                Community. All rights reserved.</div>
         </div>
     </footer>
 
-    <!-- JavaScript (if needed) -->
-<script src="js/main.js"></script>
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
 </body>
+
 </html>

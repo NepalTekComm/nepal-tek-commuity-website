@@ -1,15 +1,69 @@
-.executive-image {
-    width: 200px; 
-    height: 200px; 
-    border-radius: 50%; 
-    overflow: hidden;
-    border: 5px solid #fff;
-}
+        /* Custom CSS for NTC */
+        body {
+            font-family: Arial, sans-serif;
+        }
 
-.executive-card-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+        .primary-bg {
+            background-color: #0097B2;
+        }
+
+        .primary-text {
+            color: #0097B2;
+        }
+
+        .secondary-bg {
+            background-color: #FF914D;
+        }
+
+        /* Add border lines between sections */
+        section:not(:last-child) {
+            border-bottom: 1px solid #D1D5DB;
+        }
+
+        /* Hover effect on links */
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Styling for section titles */
+        section h2 {
+            transition: color 0.3s ease-in-out;
+        }
+
+        /* Hover effect on section titles */
+        section:hover h2 {
+            /* color: #FF914D; */
+        }
+
+        .intro-image-card {
+            border-radius: 125px 150px 130px 5px;
+        }
+
+        .absolute-badge {
+            position: absolute;
+            top: 10px;
+            left: -10px;
+            transform: rotate(-30deg);
+            padding: 2px 6px;
+            font-size: 1.0rem;
+            font-weight: 600;
+            border-radius: 0.25rem;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .executive-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #fff;
+        }
+
+        .executive-card-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        

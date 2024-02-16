@@ -1,13 +1,13 @@
 // Fetch the JSON file and loop through the data to generate the executive team cards
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("resources/json/executives.json")
-        .then((response) => response.json())
-        .then((data) => {
-            const executivesContainer = document.getElementById(
-                "executives-container"
-            );
-            data.team_members.forEach((executive) => {
-                const card = `
+  fetch("resources/json/executives.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const executivesContainer = document.getElementById(
+        "executives-container"
+      );
+      data.team_members.forEach((executive) => {
+        const card = `
                     <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
                         <div class="executive-image mb-4 mx-auto">
                             <img src="${executive.image}" alt="${executive.name}" class="w-full h-full object-cover">
@@ -35,37 +35,121 @@ document.addEventListener("DOMContentLoaded", function () {
                         </div>
                     </div>
                 `;
-                executivesContainer.innerHTML += card;
-            });
-        })
-        .catch((error) => console.error("Error fetching executives data:", error));
+        executivesContainer.innerHTML += card;
+      });
+    })
+    .catch((error) => console.error("Error fetching executives data:", error));
 });
 
 // Fetch events according to the JSON file and loop through the data to generate the event cards
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("resources/json/events.json")
-        .then((response) => response.json())
-        .then((data) => {
-            const eventCardsContainer = document.getElementById("event-cards-container");
+  fetch("resources/json/events.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const eventCardsContainer = document.getElementById(
+        "event-cards-container"
+      );
 
-            // Sort events by start date in descending order
-            data.events.sort((a, b) => new Date(b.event_start_date) - new Date(a.event_start_date));
+      // Sort events by start date in descending order
+      data.events.sort(
+        (a, b) => new Date(b.start_date) - new Date(a.start_date)
+      );
 
-            // Iterate over each event and create event cards
-            data.events.forEach((event) => {
-                const eventCard = document.createElement("div");
-                eventCard.classList.add("bg-gray-100", "p-6", "rounded-lg", "shadow-lg");
+      // Iterate over each event and create event cards
+      data.events.forEach((event) => {
+        const eventCard = document.createElement("div");
+        eventCard.classList.add(
+          "relative",
+          "bg-gray-100",
+          "p-6",
+          "rounded-lg",
+          "shadow-lg",
+          "overflow-hidden"
+        );
 
-                eventCard.innerHTML = `
-                    <h3 class="text-xl font-semibold mb-2">${event.event_title}</h3>
-                    <p class="text-gray-600 mb-4">Date: ${event.event_start_date} - ${event.event_end_date}</p>
-                    <p class="text-gray-600 mb-4">Location: ${event.event_location}</p>
-                    <p class="text-gray-600 mb-4">Description: ${event.event_description}</p>
-                    <a href="#" class="primary-bg text-white px-4 py-2 rounded hover:bg-secondary-bg">Learn More</a>
+        eventCard.innerHTML = `
+                    <div class="absolute-badge ${
+                      new Date() > new Date(event.end_date)
+                        ? "bg-red-500"
+                        : "bg-green-500"
+                    } text-white">
+                        ${
+                          new Date() > new Date(event.end_date)
+                            ? "Completed"
+                            : "Reg. Open"
+                        }
+                    </div>
+                    <img src="${event.banner}" alt="${
+          event.title
+        }" class="w-full mb-4 rounded-md">
+                    <h3 class="text-xl font-semibold mb-2">${event.title}</h3>
+                    <div class="text-gray-600 mb-4 flex items-center">
+                    <img src="resources/img/icons/date-and-time-icon.svg" class="h-4 w-4 mr-1 fill-current text-gray-600" alt="Date Icon">
+                    ${event.start_date} - ${event.end_date}
+                </div>
+                <div class="text-gray-600 mb-4 flex items-center">
+                <img src="resources/img/icons/pin-location-icon.svg" class="h-4 w-4 mr-1 fill-current text-gray-600" alt="Location Icon">
+                    ${event.location}
+                </div>
+                    <p class="text-gray-600 mb-4">${event.description}</p>
+                    <a href="#" class="primary-text font-bold">Know More</a>
                 `;
 
-                eventCardsContainer.appendChild(eventCard);
-            });
-        })
-        .catch((error) => console.error("Error fetching events data:", error));
+        eventCardsContainer.appendChild(eventCard);
+      });
+    })
+    .catch((error) => console.error("Error fetching events data:", error));
+});
+
+// Fetch the JSON file and loop through the data to generate the showcase
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("resources/json/events.json")
+    .then((response) => response.json())
+    .then((data) => {
+      // Filter events that have registration open and end date is in the future
+      const openEvents = data.events.filter((event) => {
+        return new Date() < new Date(event.end_date);
+      });
+
+      // Sort filtered events by start date in ascending order
+      openEvents.sort(
+        (a, b) => new Date(a.start_date) - new Date(b.start_date)
+      );
+
+      if (openEvents.length > 0) {
+        const nearestEvent = openEvents[0];
+        const showcaseSection = document.querySelector("#showcase-section");
+
+        showcaseSection.innerHTML = `
+    <div class="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-between">
+        <div class="w-full lg:w-7/12 lg:order-2">
+            <div class="flex h-full items-center rounded-lg primary-bg p-8 lg:p-12 text-center text-white lg:text-left">
+                <div class="lg:pl-12 lg:pr-6">
+                    <h2 class="mb-6 text-3xl font-bold">${nearestEvent.title}</h2>
+                    <div class="mb-4 text-gray-600 flex items-center">
+                        <img src="resources/img/icons/date-and-time-icon.svg" class="h-4 w-4 mr-1 fill-current" alt="Date Icon">
+                        <span>${nearestEvent.start_date} - ${nearestEvent.end_date}</span>
+                    </div>
+                    <div class="mb-4 text-gray-600 flex items-center">
+                        <img src="resources/img/icons/pin-location-icon.svg" class="h-4 w-4 mr-1 fill-current" alt="Location Icon">
+                        <span>${nearestEvent.location}</span>
+                    </div>
+                    <p class="mb-4 text-gray-600">${nearestEvent.description}</p>
+                    <a href="${nearestEvent.registration_url}" class="inline-block rounded-full border-2 border-neutral-50 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-100 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200">Register now</a>
+                </div>
+            </div>
+        </div>
+        <div class="mb-12 w-full lg:mb-0 lg:w-5/12 lg:order-1">
+            <div class="flex lg:py-12 justify-center lg:justify-end">
+                <img src="${nearestEvent.banner}" class="w-full lg:w-auto max-w-full rounded-lg shadow-lg dark:shadow-black/20" alt="${nearestEvent.title} banner">
+            </div>
+        </div>
+    </div>
+`;
+      } else {
+        // If no registration open events, hide showcase section
+        document.querySelector("#showcase-section").classList.add("hidden");
+      }
+    })
+    .catch((error) => console.error("Error fetching events data:", error));
 });

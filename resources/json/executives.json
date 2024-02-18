@@ -59,6 +59,16 @@
         "twitter": "#",
         "linkedin": "#"
       }
+    },
+    {
+      "name": "Prakash Mahara",
+      "image": "resources/img/executives/prakash_mahara.jpg",
+      "role": "Executive",
+      "social_media": {
+        "github": "https://github.com/prakash2060",
+        "twitter": "https://twitter.com/prakash_2060",
+        "linkedin": "https://www.linkedin.com/in/prakash2060"
+      }
     }
   ]
 }

@@ -12,7 +12,7 @@
     },
     {
       "name": "Satya Raj Awasthi",
-      "image": "resources/img/executives/Satya_Raj_Awasthi.png",
+      "image": "resources/img/executives/Satya.png",
       "role": "Co-ordinating Lead",
       "social_media": {
         "github": "https://github.com/SatyaRajAwasth1",
@@ -22,7 +22,7 @@
     },
     {
       "name": "Birat Aryal",
-      "image": "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).jpg",
+      "image": "resources/img/executives/Birat.png",
       "role": "Public Relation Lead",
       "social_media": {
         "github": "#",
@@ -32,7 +32,7 @@
     },
     {
       "name": "Shreeya Tamang",
-      "image": "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(31).jpg",
+      "image": "resources/img/executives/Shreeya.png",
       "role": "Technical Lead",
       "social_media": {
         "github": "#",

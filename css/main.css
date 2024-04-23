@@ -55,6 +55,9 @@
     }
 }
 
+
+
+
 /* Add your other media queries and styles here */
 
 
@@ -127,6 +130,37 @@
             align-items: center;
             text-align: center;
         }
+
+
+  /* Add this CSS to style the button */
+  /* Add this CSS to style the button */
+.btn-about-us {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #014c59;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    
+}
+
+.btn-about-us:hover {
+    background-color: #014c59;
+}
+
+.underline {
+    text-decoration: underline;
+  }
+  
+
+
+
+  
+
+
+
+
 
       
 

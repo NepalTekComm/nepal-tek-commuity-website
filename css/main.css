@@ -1,10 +1,74 @@
-        /* Custom CSS for NTC */
+/* Custom CSS for NTC */
+#hero {
+    width: 100%;
+    height: 80vh;
+    background: #014c59;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero .container {
+    padding-top: 72px;
+    text-align: center;
+}
+
+#hero h1 {
+    margin: 0 0 10px 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #fff;
+    animation: moveText 2s ease-in-out infinite alternate;
+}
+
+#hero h2 {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 50px;
+    font-size: 24px;
+}
+
+#hero .btn-get-started {
+    font-family: "Jost", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 28px 11px 28px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px 0 0 0;
+    color: #fff;
+    background: #47b2e4;
+}
+
+#hero .btn-get-started:hover {
+    background: white;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+
+
+
+/* Add your other media queries and styles here */
+
+
+        
         body {
             font-family: Arial, sans-serif;
         }
 
         .primary-bg {
             background-color: #0097B2;
+            transition: .3s;
         }
 
         .primary-text {
@@ -66,4 +130,65 @@
             align-items: center;
             text-align: center;
         }
+
+
+  /* Add this CSS to style the button */
+  /* Add this CSS to style the button */
+.btn-about-us {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #014c59;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    
+}
+
+.btn-about-us:hover {
+    background-color: #014c59;
+}
+
+.underline {
+    text-decoration: underline;
+  }
+
+/* return to top button */
+#returnTopBtn {
+    display: none;
+    position: fixed;
+    /* bottom: 20px; */
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+    padding: 10px 15px;
+    background-color: #03466c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* social media icon of footer */
+.social-icon {
+    border: 2px solid white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    background-color: white;
+    padding: 2px; /* Optional: Add padding to increase the spacing between the icon and the outline */
+ }
+.social-icon:hover {
+    transform: scale(1.2); /* Zoom in by 10% on hover */
+}
+
+
+  
+
+
+
+
+
+      
+
+       
         

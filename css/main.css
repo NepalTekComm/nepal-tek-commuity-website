@@ -152,8 +152,34 @@
 .underline {
     text-decoration: underline;
   }
-  
 
+/* return to top button */
+#returnTopBtn {
+    display: none;
+    position: fixed;
+    /* bottom: 20px; */
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+    padding: 10px 15px;
+    background-color: #03466c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* social media icon of footer */
+.social-icon {
+    border: 2px solid white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    background-color: white;
+    padding: 2px; /* Optional: Add padding to increase the spacing between the icon and the outline */
+ }
+.social-icon:hover {
+    transform: scale(1.2); /* Zoom in by 10% on hover */
+}
 
 
   

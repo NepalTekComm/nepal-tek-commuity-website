@@ -153,3 +153,31 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch((error) => console.error("Error fetching events data:", error));
 });
+
+//js code for return to top button
+const returnTopBtn = document.getElementById('returnTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 1340) { 
+                returnTopBtn.style.display = 'block';
+            } else {
+                returnTopBtn.style.display = 'none';
+            }
+        });
+
+        returnTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        returnTopBtn.addEventListener('mouseover', () => {
+          returnTopBtn.style.backgroundColor = 'rgba(226, 226, 16, 0.984)';
+          returnTopBtn.style.color = 'black';
+        });
+
+       returnTopBtn.addEventListener('mouseout', () => {
+          returnTopBtn.style.backgroundColor = '#03466c';
+          returnTopBtn.style.color = '#fff'; 
+        });

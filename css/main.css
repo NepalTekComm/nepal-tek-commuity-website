@@ -153,8 +153,8 @@
     text-decoration: underline;
   }
 
-  /* return to top button */
-  #returnTopBtn {
+/* return to top button */
+#returnTopBtn {
     display: none;
     position: fixed;
     /* bottom: 20px; */
@@ -169,6 +169,17 @@
     cursor: pointer;
 }
 
+/* social media icon of footer */
+.social-icon {
+    border: 2px solid white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    background-color: white;
+    padding: 2px; /* Optional: Add padding to increase the spacing between the icon and the outline */
+ }
+.social-icon:hover {
+    transform: scale(1.2); /* Zoom in by 10% on hover */
+}
 
 
   

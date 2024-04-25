@@ -60,14 +60,18 @@
         "linkedin": "#"
       }
     },
+
+
+    
+
     {
       "name": "Prakash Mahara",
       "image": "resources/img/executives/prakash_mahara.png",
       "role": "Executive",
       "social_media": {
-        "github": "https://github.com/prakash2060",
-        "twitter": "https://twitter.com/prakash_2060",
-        "linkedin": "https://www.linkedin.com/in/prakash2060"
+        "github": "https://github.com/prakash27x",
+        "twitter": "https://twitter.com/prakash_27x",
+        "linkedin": "https://www.linkedin.com/in/prakash27x"
       }
     },
     {
@@ -78,6 +82,16 @@
         "github": "https://github.com/s4da3h",
         "twitter": "https://twitter.com/s7da3h",
         "linkedin": "https://www.linkedin.com/in/siddhanta-chhetri"
+      }
+    },
+    {
+      "name": "Hemraj Pant",
+      "image": "resources/img/executives/Hemraj_Pant.jpg",
+      "role": "Executive",
+      "social_media": {
+        "github": "https://github.com/hemrajpant69",
+        "twitter": "https://twitter.com/gamer_dod",
+        "linkedin": "https://www.linkedin.com/in/hemrajpant69"
       }
     }
   ]

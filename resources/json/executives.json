@@ -60,6 +60,19 @@
         "linkedin": "#"
       }
     },
+
+
+    {
+      "name": "Hemraj Pant",
+      "image": "resources/img/executives/Hemraj_Pant.jpg",
+      "role": "Executive",
+      "social_media": {
+        "github": "https://github.com/hemrajpant69",
+        "twitter": "https://twitter.com/gamer_dod",
+        "linkedin": "https://www.linkedin.com/in/hemrajpant69"
+      }
+    },
+
     {
       "name": "Prakash Mahara",
       "image": "resources/img/executives/prakash_mahara.png",

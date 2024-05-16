@@ -6,7 +6,8 @@
             "start_date": "2024-01-27",
             "end_date": "2024-01-27",
             "location": "NCIT College",
-            "description": "AI/ML Bootcamp Day 1 is the first day of the bootcamp."
+            "description": "AI/ML Bootcamp Day 1 is the first day of the bootcamp.",
+            "link": ""
         },
         {
             "banner": "resources/img/event-banners/nepaltekcommunity_AI_ML Bootcamp_day_2.png",
@@ -14,7 +15,8 @@
             "start_date": "2024-02-17",
             "end_date": "2024-02-18",
             "location": "NCIT College",
-            "description": "Day 2 of the AI/ML Bootcamp."
+            "description": "Day 2 of the AI/ML Bootcamp.",
+            "link": ""
         },
         {
             "banner": "resources/img/event-banners/community_announcement.jpg",
@@ -22,7 +24,8 @@
             "start_date": "2023-12-06",
             "end_date": "2023-12-06",
             "location": "NCIT Hall, Room No 601 Block D",
-            "description": "Community announcement and discussion on the future of the community."
+            "description": "Community announcement and discussion on the future of the community.",
+            "link": ""
         }
     ]
 }

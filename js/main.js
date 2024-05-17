@@ -57,15 +57,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Iterate over each event and create event cards
       data.events.forEach((event) => {
-        const eventCard = document.createElement("div");
+        const eventCard = document.createElement("a");
         eventCard.classList.add(
           "relative",
           "bg-gray-100",
           "p-6",
           "rounded-lg",
           "shadow-lg",
-          "overflow-hidden"
+          "overflow-hidden",
+          "no-underline",
+          "hover:no-underline",
+          "hover:bg-gray-50",
+          "hover:shadow-xl"
         );
+
+        eventCard.href = event.link
 
         eventCard.innerHTML = `
                     <div class="absolute-badge ${

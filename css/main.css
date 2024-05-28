@@ -33,10 +33,11 @@
         font-weight: 500;
         font-size: 16px;
         letter-spacing: 1px;
+        text-decoration: none;
         display: inline-block;
         padding: 10px 28px 11px 28px;
         border-radius: 50px;
-        transition: 0.5s;
+        transition: 0.3s;
         margin: 10px 0 0 0;
         color: #fff;
         background: #47b2e4;
@@ -44,6 +45,33 @@
 
     #hero .btn-get-started:hover {
         background: white;
+        color: #47b2e4;
+    }
+
+    #hero .social-media a i {
+        color: White;
+        margin-right: 10px;
+        transition: 0.2s;
+    }
+
+    .social-media #sm-facebook-logo:hover {
+        color: #0263f7;
+    }
+
+    .social-media #sm-instagram-logo:hover {
+        color: orange;
+    }
+
+    .social-media #sm-twitter-logo:hover {
+        color: #1c96e9;
+    }
+
+    .social-media #sm-discord-logo:hover {
+        color: #5661ea;
+    }
+
+    .social-media #sm-linkedin-logo:hover {
+        color: #0063c1;
     }
 
     @keyframes moveText {

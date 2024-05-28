@@ -74,20 +74,17 @@ document.addEventListener("DOMContentLoaded", function () {
         eventCard.href = event.link
 
         eventCard.innerHTML = `
-                    <div class="absolute-badge ${
-                      new Date() > new Date(event.end_date)
-                        ? "bg-red-500"
-                        : "bg-green-500"
-                    } text-white">
-                        ${
-                          new Date() > new Date(event.end_date)
-                            ? "Completed"
-                            : "Reg. Open"
-                        }
+                    <div class="absolute-badge ${new Date() > new Date(event.end_date)
+            ? "bg-red-500"
+            : "bg-green-500"
+          } text-white">
+                        ${new Date() > new Date(event.end_date)
+            ? "Completed"
+            : "Reg. Open"
+          }
                     </div>
-                    <img src="${event.banner}" alt="${
-          event.title
-        }" class="w-full mb-4 rounded-md">
+                    <img src="${event.banner}" alt="${event.title
+          }" class="w-full mb-4 rounded-md">
                     <h3 class="text-xl font-semibold mb-2">${event.title}</h3>
                     <div class="text-gray-600 mb-4 flex items-center">
                     <img src="resources/img/icons/date-and-time-icon.svg" class="h-4 w-4 mr-1 fill-current text-gray-600" alt="Date Icon">
@@ -163,27 +160,52 @@ document.addEventListener("DOMContentLoaded", function () {
 //js code for return to top button
 const returnTopBtn = document.getElementById('returnTopBtn');
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 1340) { 
-                returnTopBtn.style.display = 'block';
-            } else {
-                returnTopBtn.style.display = 'none';
-            }
-        });
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 1340) {
+    returnTopBtn.style.display = 'block';
+  } else {
+    returnTopBtn.style.display = 'none';
+  }
+});
 
-        returnTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+returnTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
 
-        returnTopBtn.addEventListener('mouseover', () => {
-          returnTopBtn.style.backgroundColor = 'rgba(226, 226, 16, 0.984)';
-          returnTopBtn.style.color = 'black';
-        });
+returnTopBtn.addEventListener('mouseover', () => {
+  returnTopBtn.style.backgroundColor = 'rgba(226, 226, 16, 0.984)';
+  returnTopBtn.style.color = 'black';
+});
 
-       returnTopBtn.addEventListener('mouseout', () => {
-          returnTopBtn.style.backgroundColor = '#03466c';
-          returnTopBtn.style.color = '#fff'; 
-        });
+returnTopBtn.addEventListener('mouseout', () => {
+  returnTopBtn.style.backgroundColor = '#03466c';
+  returnTopBtn.style.color = '#fff';
+});
+
+
+// Event Listener for Toggle Menu
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleBtn = document.getElementById("toggleBtn");
+  const navMenu = document.getElementById("navMenu");
+
+  toggleBtn.addEventListener("click", function () {
+    // Toggle visibility by changing the display property
+    if (navMenu.style.display === "none" || navMenu.style.display === "") {
+      // If the menu is hidden or its display property is not set
+      navMenu.style.display = "block";
+    } else {
+      // If the menu is visible
+      navMenu.style.display = "none";
+    }
+  });
+
+  // Hide the menu when clicked outside (optional)
+  document.addEventListener("click", function (event) {
+    if (!navMenu.contains(event.target) && !toggleBtn.contains(event.target) && !event.target.classList.contains('nav-link')) {
+      navMenu.style.display = "none";
+    }
+  });
+});

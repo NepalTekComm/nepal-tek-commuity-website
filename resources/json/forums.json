@@ -1,0 +1,34 @@
+{
+    "forums": [
+        {
+            "forum": 3,
+            "title": "Bug Bounty Hunting with Dipesh Bohara",
+            "description": "Join us as Dipesh Bohara, a renowned bug bounty hunter, shares his story and process. Dipesh has won bounties for finding critical security bugs on various applications, including Facebook by Meta, and was awarded $5250 just yesterday.",
+            "led_by": "Dipesh Bohara",
+            "location": "Seminar Hall, 702 (NCIT)",
+            "date_time": "2024-05-26T10:05:00",
+            "banner": "resources/img/forums/forum3.jpg",
+            "url": "forum-detail.html"
+        },
+        {
+            "forum": 2,
+            "title": "Software Development: From Engineer's Desk to User's Device",
+            "description": "Our moderator Satya Raj Awasthi will lead the forum on Software Development: From Engineer's Desk to User's Device. He will share his real-world experience on how software is taken from design and development to production.",
+            "led_by": "Satya Raj Awasthi",
+            "location": "Seminar Hall, 702 (NCIT)",
+            "date_time": "2024-05-19T10:00:00",
+            "banner": "resources/img/forums/forum2.jpg",
+            "url": "forum-detail.html"
+        },
+        {
+            "forum": 1,
+            "title": "Freelancing for Beginners",
+            "description": "Our first Friday Forum, led by Bibek Dhakal, delved into the world of freelancing for beginners. Bibek shared invaluable insights to empower our community members on their freelance journey.",
+            "led_by": "Bibek Dhakal",
+            "location": "Seminar Hall, 702 (NCIT)",
+            "date_time": "2024-05-12T10:00:00",
+            "banner": "resources/img/forums/forum1.jpg",
+            "url": "forum-detail.html"
+        }
+    ]
+}

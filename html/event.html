@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="../resources/img/icons/NTC_LOGO.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <style>
         /* Custom CSS for NTC */
         body {
@@ -24,6 +25,21 @@
         .text-ntc {
             color: #0097B2;
         }
+
+        .absolute-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 0.5em 1em;
+            border-bottom-left-radius: 0.5em;
+        }
+
+        .card-image {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+            border-radius: 0.5rem;
+        }
     </style>
     <title>Nepal TeK Community (NTC) - Events</title>
 </head>
@@ -35,10 +51,8 @@
             <h1 class="text-white text-2xl font-semibold">NTC</h1>
             <input type="checkbox" id="menu-toggle" class="hidden">
             <label for="menu-toggle" class="text-white cursor-pointer md:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                    class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
-                    </path>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </label>
             <ul class="hidden md:flex md:space-x-4 text-white">
@@ -52,6 +66,23 @@
         </nav>
     </header>
 
+    <!-- Friday Forums Section -->
+    <section id="forums" class="bg-white p-8">
+        <div class="container mx-auto">
+            <h2 class="text-3xl text-ntc font-semibold">Friday Forums</h2>
+            <div class="swiper-container mt-8">
+                <div class="swiper-wrapper" id="forum-cards-container">
+                    <!-- Forum Cards will be dynamically inserted here -->
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Event Page Content -->
     <section id="events" class="bg-white p-8">
         <div class="container mx-auto">
@@ -62,11 +93,164 @@
         </div>
     </section>
 
-    <!-- Footer -->
-
-
     <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <script>
+        let currentPageForums = 1;
+        let currentPageEvents = 1;
+        const itemsPerPage = 6;
+
+        async function fetchForums() {
+            try {
+                const response = await fetch("../resources/json/forums.json");
+                const data = await response.json();
+                return data.forums.sort(
+                    (a, b) => new Date(b.date_time) - new Date(a.date_time)
+                );
+            } catch (error) {
+                console.error('Error fetching forums data:', error);
+            }
+        }
+
+        async function fetchEvents() {
+            try {
+                const response = await fetch("../resources/json/events.json");
+                const data = await response.json();
+                return data.events.sort(
+                    (a, b) => new Date(b.start_date) - new Date(a.start_date)
+                );
+            } catch (error) {
+                console.error('Error fetching events data:', error);
+            }
+        }
+
+        function createForumCard(forum) {
+            const forumCard = document.createElement("div");
+            forumCard.classList.add("swiper-slide", "relative", "bg-gray-100", "p-6", "rounded-lg", "shadow-lg", "overflow-hidden", "no-underline", "hover:no-underline", "hover:bg-gray-50", "hover:shadow-xl");
+
+            forumCard.innerHTML = `
+                <div class="absolute-badge ${new Date(forum.date_time) > new Date() ? "bg-green-500" : "bg-red-500"} text-white">
+                    ${new Date(forum.date_time) > new Date() ? "Open" : "Held"}
+                </div>
+                <img src="../${forum.banner}" alt="${forum.title}" class="card-image mb-4">
+                <h3 class="text-xl font-semibold mb-2">Forum ${forum.forum}</h3>
+                <p class="text-gray-600 mb-4">${forum.title}</p>
+                <p class="text-gray-600 mb-4">${forum.description}</p>
+                <p class="text-gray-600 mb-4">Led by: ${forum.led_by}</p>
+                <p class="text-gray-600 mb-4">Location: ${forum.location}</p>
+                <p class="text-gray-600 mb-4">Date & Time: ${forum.date_time}</p>
+                <a href="${forum.url}" class="primary-text font-bold">Know More</a>
+            `;
+
+            return forumCard;
+        }
+
+        function createEventCard(event) {
+            const eventCard = document.createElement("div");
+            eventCard.classList.add("relative", "bg-gray-100", "p-6", "rounded-lg", "shadow-lg", "overflow-hidden", "no-underline", "hover:no-underline", "hover:bg-gray-50", "hover:shadow-xl");
+
+            eventCard.innerHTML = `
+                <div class="absolute-badge ${new Date(event.end_date) > new Date() ? "bg-green-500" : "bg-red-500"} text-white">
+                    ${new Date(event.end_date) > new Date() ? "Registration Open" : "Completed"}
+                </div>
+                <img src="../${event.banner}" alt="${event.title}" class="card-image mb-4">
+                <h3 class="text-xl font-semibold mb-2">${event.title}</h3>
+                <div class="text-gray-600 mb-4 flex items-center">
+                    <img src="../resources/img/icons/date-and-time-icon.svg" class="h-4 w-4 mr-1 fill-current text-gray-600" alt="Date Icon">
+                    ${event.start_date} - ${event.end_date}
+                </div>
+                <div class="text-gray-600 mb-4 flex items-center">
+                    <img src="../resources/img/icons/pin-location-icon.svg" class="h-4 w-4 mr-1 fill-current text-gray-600" alt="Location Icon">
+                    ${event.location}
+                </div>
+                <p class="text-gray-600 mb-4">${event.description}</p>
+                <a href="${event.url}" class="primary-text font-bold">Know More</a>
+            `;
+
+            return eventCard;
+        }
+
+        async function loadForums() {
+            const forums = await fetchForums();
+            if (!forums) {
+                console.error('No forums data found');
+                return;
+            }
+
+            const forumCardsContainer = document.getElementById("forum-cards-container");
+
+            const start = (currentPageForums - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const paginatedForums = forums.slice(start, end);
+
+            paginatedForums.forEach(forum => {
+                const forumCard = createForumCard(forum);
+                forumCardsContainer.appendChild(forumCard);
+            });
+
+            currentPageForums++;
+        }
+
+        async function loadEvents() {
+            const events = await fetchEvents();
+            if (!events) {
+                console.error('No events data found');
+                return;
+            }
+
+            const eventCardsContainer = document.getElementById("event-cards-container");
+
+            const start = (currentPageEvents - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const paginatedEvents = events.slice(start, end);
+
+            paginatedEvents.forEach(event => {
+                const eventCard = createEventCard(event);
+                eventCardsContainer.appendChild(eventCard);
+            });
+
+            currentPageEvents++;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            loadForums();
+            loadEvents();
+
+            new Swiper('.swiper-container', {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 30,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 40,
+                    },
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                loadForums();
+                loadEvents();
+            }
+        });
+    </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </body>
 
 </html>
